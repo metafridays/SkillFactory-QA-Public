@@ -1,5 +1,3 @@
-from random import randint
-
 def while_bubblesort(A):
     i = 0
     while i < len(A)-1:

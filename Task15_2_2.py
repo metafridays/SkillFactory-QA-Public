@@ -1,5 +1,3 @@
-from random import randint
-
 def descend_bubble(A):
     for i in range(len(A)-1):
         for j in range(len(A)-i-1):
