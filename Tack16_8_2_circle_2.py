@@ -1,4 +1,4 @@
-from Task16_8_1_rectangle import Rectangle, Square
+from Task16_8_2_circle import Rectangle, Square, Circle
 
 #   Create two rectangles
 
@@ -26,3 +26,8 @@ for figure in figures:
         print(figure.get_area_square())
     else:
         print(figure.get_area())
+
+circle_1 = Circle(3)
+circle_2 = Circle(7)
+print("Circle area:")
+print(circle_1.get_area_circle(), circle_2.get_area_circle())
