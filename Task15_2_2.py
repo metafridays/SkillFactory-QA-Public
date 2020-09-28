@@ -6,5 +6,5 @@ def descend_bubble(A):
     return A
 
 a = [2, 7, 3, 8, 78, 34, 67, 33, 8]
-descend_bubble(a)
+print(descend_bubble(a))
 print(a[0]+a[5])
