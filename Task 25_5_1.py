@@ -9,8 +9,11 @@ def test_petfriends(web_browser):
 
     # Open PetFriends base page:
     web_browser.get("https://petfriends1.herokuapp.com/")
+#    driver = webdriver.Firefox()
+#    web_browser.get("http://somedomain/url_that_delays_loading")
+    element = WebDriverWait(web_browser, 10).until(EC.presence_of_element_located((By.XPATH, "//button[@onclick=\"document.location='/new_user';\"]")))
 
-    time.sleep(5)  # just for demo purposes, do NOT repeat it on real projects!
+#    time.sleep(5)  # just for demo purposes, do NOT repeat it on real projects!
 
     # click on the new user button
     btn_newuser = web_browser.find_element_by_xpath("//button[@onclick=\"document.location='/new_user';\"]")
@@ -24,7 +27,7 @@ def test_petfriends(web_browser):
 
     # add email
     field_email = web_browser.find_element_by_id("email")
-    field_email.clear()
+    field_email.clear() 
     field_email.send_keys("taroso1031@vy89.com")
     
     # add password
@@ -48,7 +51,11 @@ def test_petfriends(web_browser):
 def testing():
    pytest.driver = webdriver.Chrome('C:/Users/metaf/Documents/QA/chromedriver/chromedriver.exe')
    # Переходим на страницу авторизации
-   pytest.driver.get('http://petfriends1.herokuapp.com/login')
+   # используя неявное ожидание
+
+   pytest.driver.implicitly_wait(10)
+   pytest.driver.get("http://petfriends1.herokuapp.com/login")
+   myDynamicElement = pytest.driver.find_element_by_id("email")
 
    yield
 
